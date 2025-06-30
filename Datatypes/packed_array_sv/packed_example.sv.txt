@@ -1,8 +1,0 @@
-module packed_tb;
-
-reg [3:0]a;          //1D packed array 
-reg [3:0][2:0];      //2D packed array
-reg [3:0][2:0][1:0]; //3D packed array
-
-initial begin
- 
