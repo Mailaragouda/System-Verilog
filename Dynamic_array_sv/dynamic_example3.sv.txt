@@ -1,0 +1,18 @@
+//Allocating memory to 2D dynamic array 
+
+//for Regular Array
+
+module tb;
+
+int a[][];
+
+initial begin
+  a=new[5];
+
+  foreach(a[i])
+      a[i]=new[4];    //5x4 array
+    
+    $display("%p",a);
+end
+
+endmodule
