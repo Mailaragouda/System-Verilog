@@ -1,0 +1,22 @@
+
+//Allocating memory to 2D dynamic array 
+//for Irregular array
+
+module tb;
+
+int a[][];
+
+initial begin
+ a=new[5];
+
+a[0]=new[1];
+a[1]=new[3];
+a[2]=new[2];
+a[3]=new[5];
+a[4]=new[4];
+
+$display("%p", a);
+
+end
+
+endmodule

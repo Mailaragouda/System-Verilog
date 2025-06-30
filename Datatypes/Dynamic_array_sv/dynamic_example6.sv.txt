@@ -1,0 +1,16 @@
+
+//Allocating memory to 2D dynamic array without using new[]
+
+module tb;
+
+int a[][];
+
+initial begin
+
+a='{'{1,2},'{2,3},'{3,4}};   //2x3 2D dynamic array
+
+$display("%p", a);
+
+end
+endmodule
+

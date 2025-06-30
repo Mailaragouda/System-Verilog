@@ -1,0 +1,16 @@
+module tb;
+
+integer a[9:0];
+
+integer i;
+
+initial begin
+
+  for(i=0;i<$size(a);i++)
+       a[i]=i;
+
+  $display("array elements: %p",a);
+
+end
+
+endmodule

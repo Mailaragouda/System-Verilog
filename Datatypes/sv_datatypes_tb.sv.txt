@@ -1,0 +1,40 @@
+module tb;
+
+//2 state datatypes
+bit a;
+byte b;
+int c;
+short int d;
+long int e;
+real f;    //floating
+shortreal g;
+realtime h;
+
+//4 state datatype
+
+logic i;
+integer j; 
+reg k;
+time t;
+
+initial begin
+
+$display("---------------------2 state datatypes-------------------------");
+$display("[bit]: default size=%0d and default value=%0d",$bits(a),a);
+$display("[byte]: default size=%0d and default value=%0d",$bits(b),b);
+$display("[int]: default size=%0d and default value=%0d",$bits(c),c);
+$display("[short int]: default size=%0d and default value=%0d",$bits(d),d);
+$display("[long int ]: default size=%0d and default value=%0d",$bits(e),e);
+$display("[real]: default size=%0d and default value=%0d",$bits(f),f);
+$display("[short real]: default size=%0d and default value=%0d",$bits(g),g);
+$display("[realtime]: default size=%0d and default value=%0d",$bits(h),h);
+$display("---------------------4 state datatypes-------------------------");
+$display("[logic]: default size=%0d and default value=%0d",$bits(i),i);
+$display("[integer]: default size=%0d and default value=%0d",$bits(j),j);
+$display("[reg]: default size=%0d and default value=%0d",$bits(k),k);
+$display("[time]: default size=%0d and default value=%0d",$bits(t),t);
+
+end
+
+endmodule
+

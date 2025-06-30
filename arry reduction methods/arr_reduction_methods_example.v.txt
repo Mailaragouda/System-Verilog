@@ -1,0 +1,26 @@
+
+module array_reduction;
+  int arr[4];
+  int arr_sum,arr_and,arr_or,arr_xor;
+  
+  
+  initial begin
+    arr='{1,2,3,4};
+    $display("array is : %p",arr);
+    
+    arr_sum=arr.sum();
+    $display("sum of array elements is : %0d",arr_sum);
+
+    arr_and=arr.and();
+    $display("reduction and of array elements is : %0d",arr_and);
+    
+    arr_or=arr.or();
+    $display("reduction and of array elements is : %0d",arr_or);
+    
+    arr_xor=arr.xor();
+    $display("reduction and of array elements is : %0d",arr_xor);
+    
+    
+  end
+  
+endmodule

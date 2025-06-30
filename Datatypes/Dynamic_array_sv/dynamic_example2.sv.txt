@@ -1,0 +1,19 @@
+//initializing dynamic array without using new[] 
+
+module tb;
+
+int a[];
+
+initial begin
+a='{1,2,3,4,5};
+$display("size of array : %0d",a.size());
+$display("array elements : %p", a);
+
+//resizing 
+a=new[10](a);
+$display("size of array after resizing : %0d",a.size());
+$display("array elements after : %p", a);
+
+end
+
+endmodule

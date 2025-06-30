@@ -1,0 +1,27 @@
+module arr_ordering_methods;
+  
+  int arr[7]='{8,3,1,2,5,6,7};
+  
+  initial begin
+    
+        
+    $display("Original array: %p",arr);
+    
+    
+    arr.reverse();
+    $display("reversed array: %p",arr);
+    
+    arr.sort();  //it will sort in ascending order
+    $display("sorted array: %p",arr);
+    
+    arr.rsort();
+    $display("reverse sorted array: %p",arr);
+    
+    arr.shuffle();
+    $display("shuffled array: %p",arr);
+    
+    
+  end
+  
+endmodule
+    

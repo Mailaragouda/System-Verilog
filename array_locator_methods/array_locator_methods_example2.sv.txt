@@ -1,0 +1,52 @@
+module arr_locator_methods;
+  int arr[int];
+  int x[$];
+  
+  initial begin
+     
+    arr[0]=1;
+    arr[1]=2;
+    arr[2]=3;
+    arr[8]=4;
+    arr[9]=5;
+    arr[12]=6;
+    
+
+    
+    x=arr.min;
+    $display("the min value in arr: %p",x);
+    
+    x=arr.max;
+    $display("the max value in arr: %p",x);
+    
+    x=arr.unique;
+    $display("the unique elements in arr: %p",x);
+    
+    
+    //without local variable (using built in keyword i,e "item")
+    x=arr.find with(item>2);
+    $display("find : %p",x);
+    
+    //with local variable
+    x=arr.find(element) with(element>2);
+    $display("find : %p",x);
+    
+    x=arr.find_index with(item>3);
+    $display("find_index : %p",x);
+    
+    x=arr.find_first with(item>3);
+    $display("find_first : %p",x);
+    
+    x=arr.find_first_index with(item>3);
+    $display("find_first_index : %p",x);
+    
+    x=arr.find_last with(item>2);
+    $display("find_last : %p",x);
+    
+    x=arr.find_last_index with(item>3);
+    $display("find_last_index : %p",x);
+    
+  end
+  
+endmodule
+    
