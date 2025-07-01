@@ -1,0 +1,29 @@
+module enum_example;
+  
+  //without using typedef
+  enum {RED,BLUE,GREEN} mycolor;  //here color act as datatype
+ 
+  
+  initial begin
+    
+    $display("the nor of elements in enum : %0d",mycolor.num);
+    
+    mycolor=mycolor.first;
+    $display("color[%0d] : %s",mycolor,mycolor.name);
+    
+    mycolor=mycolor.last;
+    $display("color[%0d] : %s",mycolor,mycolor.name);
+    
+    mycolor=mycolor.next;
+    $display("color[%0d] : %s",mycolor,mycolor.name);
+    
+    mycolor=mycolor.next(2);
+    $display("color[%0d] : %s",mycolor,mycolor.name);
+    
+    mycolor=mycolor.next(2);
+    $display("color[%0d] : %s",mycolor,mycolor.name);
+
+    
+  end
+  
+endmodule

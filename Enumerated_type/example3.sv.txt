@@ -1,0 +1,21 @@
+module enum_example;
+  
+  //without using typedef
+  enum {RED,BLUE,GREEN} mycolor;  //here color act as variable
+
+  
+  initial begin
+    $display("the nor of elements in enum : %0d",mycolor.num);
+    
+    mycolor=mycolor.first;
+
+    do
+      begin
+        $display("color[%0d] : %s",mycolor,mycolor.name);
+        mycolor=mycolor.next;
+      end
+    while(mycolor!=mycolor.first);    
+
+  end
+  
+endmodule
