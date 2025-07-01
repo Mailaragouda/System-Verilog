@@ -1,0 +1,38 @@
+module asso_array;
+  
+  int a[string]='{"jan":1,"feb":2,"march":3,"april":4,"may":5};
+  
+  string index;
+
+  initial begin
+    
+    $display("ass array : %p",a);
+    
+
+    a.first(index);
+    $display("the first index of array : %s",index);    
+    $display("the value at first index : %0d",a[index]);
+
+    a.last(index);
+    $display("the first index of array : %s",index);        
+    $display("the value at last index : %0d",a[index]);
+
+    index="jan";
+   
+    a.next(index);
+    $display("the next index of jan in array : %s",index);    
+    $display("the value next index : %0d",a[index]);
+    
+    //to print whole array values
+    while(a.next(index))
+      foreach(a[index])
+        $display("a[%s] =  %0d",index,a[index]);
+     
+    //or
+    $display("the array : %p",a);    
+   end
+endmodule
+    
+  
+  
+  

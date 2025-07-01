@@ -1,0 +1,21 @@
+module asso_array;
+  
+  int arr[*];
+
+  initial begin
+    arr[0]=5;
+    arr[10]=10;
+    arr[7]=15;
+    arr[8]=20;
+    arr[15]=25;
+    arr[20]=30;
+ 
+    $display("the size of array : %0d",$size(arr));
+    $display("array elements : %p",arr);
+    
+   end
+endmodule
+    
+  
+  
+  
