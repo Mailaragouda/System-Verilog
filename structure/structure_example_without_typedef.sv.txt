@@ -1,0 +1,30 @@
+
+module tb;
+  
+   struct {string name;
+                  int roll_no;
+                  string dob;
+                  longint mob;
+          }id_card[3];  //here id_card acts as varible
+  
+  initial begin
+    //method1 of initializing structure
+    id_card[0].name="GOUDA";
+    id_card[0].roll_no=24;
+    id_card[0].dob="6.4.2003";
+    id_card[0].mob=123450;
+    
+    //method2
+    id_card[1]='{name:"KUSUMA", roll_no:25, dob:"01.10.1978", mob:123451};
+    
+    //method3
+    id_card[2]='{"Sunitha",26,"10.05.2003",123452};
+    
+    
+    foreach(id_card[i]) begin
+      $display(id_card[i]);
+    end
+    
+  end
+  
+endmodule

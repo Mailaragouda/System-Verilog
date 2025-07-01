@@ -1,0 +1,17 @@
+module tb;
+typedef struct {
+  int opcode;
+  logic [70] addr;
+  string oper1;
+} unpacked_struct;
+
+unpacked_struct op1;
+
+initial begin
+  op1='{opcode3'd7,addr8'd10,oper1add};
+
+  $display(opcode=%0d   addr=%0d  opreration=%s,op1.opcode,op1.addr,  op1.oper1);
+
+end
+
+endmodule
