@@ -1,0 +1,15 @@
+module dynamic_casting;
+  real a;
+  int b;
+  
+  initial begin
+    a=(2.2*3.1);  //6.82
+    $display("a : %0d ",a);
+    if($cast(b,a)) begin  // 7
+      $display("casting success...");
+      $display("b : %0d ",b);
+    end
+    
+  end
+  
+endmodule

@@ -1,0 +1,24 @@
+module casting;
+
+  typedef enum {red, green, blue, yellow, white, black} colors;
+
+  colors col;
+  int a;
+
+  initial begin
+    // Dynamic cast using $cast
+    if ($cast(col, 2))
+      $display("Dynamic cast success - col: %0d", col);
+    else
+      $display("Dynamic cast failed");
+
+    // Static cast from int to enum
+    a = colors'(2);           // Static cast (enum value 2 → blue)
+    col = colors'(2);       // Static cast (enum value 3 → yellow)
+
+    $display("a   : %0d", a);
+    $display("col : %0d", col);
+  end
+
+endmodule
+s
