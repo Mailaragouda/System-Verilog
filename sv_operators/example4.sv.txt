@@ -1,0 +1,18 @@
+module sv_operators;
+  
+  int a=20;
+  bit[4:0]b=5'b10101;
+  
+  initial begin
+    if(a inside {[1:5],[10:15],17,18})
+      $display("a is found");
+    
+    if(b==?5'b1xz01) //wild card equality : x & z are treated as dont cares
+      $display("matched/equal");
+    else
+      $display("not matched");
+    
+  end
+endmodule
+
+

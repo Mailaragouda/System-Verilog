@@ -1,0 +1,18 @@
+// logical implication: a->b  =>  !a||b
+// logical equivalce : a<->b =>  (a->b)&&(b->a)  => !a||b && !b||a
+
+module sv_operators;
+  
+  int a=1,b=2;
+  
+  initial begin
+    if(a->b)
+      $display("a implies b");
+    
+    if(a<->b)
+      $display("a logical equivalance to b");
+    
+  end
+endmodule
+
+

@@ -1,0 +1,20 @@
+module sv_operators;
+  
+  int a,b=5,c=7,d,e=0;
+  
+  initial begin
+ 
+    if((a=b))                   //if((a=b))---> a=b then check if(a)
+      $display("a=%0d b=%0d",a,b);                
+    
+    
+    if((a=(b=c)))
+      $display("a=%0d b=%0d c=%0d",a,b,c); 
+    
+    if((d=e))
+      $display("d=%0d e=%0d",d,e);
+    else
+      $display("condtion failed");
+    
+  end
+endmodule
