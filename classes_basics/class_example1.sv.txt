@@ -1,0 +1,24 @@
+class packet;
+  bit [7:0]addr;
+  bit [7:0]data;
+  
+  function void display();
+    $display("addr=%0d data=%0d",addr,data);
+  endfunction
+  
+endclass
+
+
+//testcase
+module tb;
+  
+  //declare the handles of class
+  packet p1;  //handle is pointer to that memory
+  
+  initial begin
+    p1=new();   //creating object->memory
+    p1.addr=1;
+    p1.data=2;
+    p1.display();
+  end
+endmodule

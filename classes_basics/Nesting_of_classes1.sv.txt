@@ -1,0 +1,48 @@
+//Nesting of class
+
+class first;
+  
+  int a;
+  
+  function void display();
+    $display("a=%0d",a);
+  endfunction
+    
+  
+endclass
+
+class second;
+  
+  int b;
+  first f1,f2;
+  
+  
+  function new();
+    f1=new();
+  endfunction
+    
+  function void display();
+    $display("b=%0d",b);
+  endfunction
+  
+endclass
+
+module tb;
+  
+  second s;
+  
+  initial begin
+    s=new();
+    
+    s.b=10;
+    s.f1.a=20;
+    
+    s.display();
+    s.f1.display();
+    
+
+    
+  end
+  
+endmodule
+  

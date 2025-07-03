@@ -1,0 +1,32 @@
+//class with automatic properties and methods 
+//in this case the memory is allocated to handles
+//by default class properties and methods automatic
+//memory is allocated using "new()" constructor
+
+class packet;
+  bit [7:0]addr;
+  bit [7:0]data;
+  
+  function void display();
+    $display("addr=%0d data=%0d",addr,data);
+  endfunction
+  
+endclass
+
+
+//testcase
+module tb;
+  
+  //declare the handles of class
+  packet p1,p2;  //handle is pointer to that memory
+  
+  initial begin
+    p1=new();   //creating object->memory
+    p2=new();
+    p1.addr=10;
+    p1.data=20;
+    p1.display();  //10,20
+    p2.display();   //0,0
+  end
+  
+endmodule
