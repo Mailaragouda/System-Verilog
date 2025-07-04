@@ -1,0 +1,54 @@
+class first;
+  int a;
+  
+endclass
+
+class second;
+  int b;
+  first f1;
+  
+  function new();
+    f1=new();
+  endfunction
+  
+endclass
+    
+
+module tb;
+  
+  second s1,s2;
+  
+  initial begin
+    s1=new();
+    
+    s1.f1.a=10;
+    s1.b=20;
+    
+    s2=new s1;
+    
+    $display("[s1]: a=%0d  b=%0d",s1.f1.a,s1.b);
+    $display("[s2]: a=%0d  b=%0d",s2.f1.a,s2.b);
+    
+    
+    s2.f1.a=50;
+    s2.b=100;
+    
+    $display("[s1]: a=%0d  b=%0d",s1.f1.a,s1.b);
+    $display("[s2]: a=%0d  b=%0d",s2.f1.a,s2.b);
+    
+    //shared memory for objects
+    s1.f1.a=500;
+    s2.f1.a=100;
+    
+    $display("[s1] a=%0d",s1.f1.a);  
+    $display("[s2] a=%0d",s2.f1.a);
+    
+    //different memory for same class properties
+    s1.b=30;
+    s2.b=40;
+    
+    $display("[s1] a=%0d",s1.b);  
+    $display("[s2] a=%0d",s2.b);
+  end
+  
+endmodule

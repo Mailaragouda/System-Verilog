@@ -1,0 +1,58 @@
+class first;
+  
+  int a;
+  
+  function first copy();
+    copy=new();
+    copy.a=a;
+  endfunction
+  
+endclass
+
+class second;
+  
+  int b;
+  first f1;
+  
+  function new();
+    f1=new();
+  endfunction
+  
+  function second copy();
+    copy=new();
+    copy.b=b;
+    copy.f1=f1.copy();
+  endfunction
+  
+endclass
+
+module tb;
+  
+  second s1,s2;
+  
+  initial begin
+    
+    s1=new();
+    s2=new();
+    
+    s1.b=50;
+    
+    s2=s1.copy();
+    
+    $display("[s1] : b=%0d",s1.b); //50
+    $display("[s2] : b=%0d",s2.b); //50
+    
+    s2.b=100;
+    
+    $display("[s1] : b=%0d",s1.b);  //50
+    $display("[s2] : b=%0d",s2.b);  //100
+    
+    s1.f1.a=15;
+    
+    $display("[s1] : a=%0d",s1.f1.a); //15
+    $display("[s2] : a=%0d",s2.f1.a); //0 
+
+  end
+  
+endmodule
+    

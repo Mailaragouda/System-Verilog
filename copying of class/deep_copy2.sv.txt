@@ -1,0 +1,75 @@
+class first;
+  
+  int a;
+  
+  function first copy();
+    copy=new();
+    copy.a=a;
+  endfunction
+  
+endclass
+
+class second;
+  
+  int b;
+  first f1;
+  
+  function new();
+    f1=new();
+  endfunction
+  
+  function second copy();
+    copy=new();
+    copy.b=b;
+    copy.f1=f1.copy();
+  endfunction
+  
+endclass
+
+class third;
+  
+  second s1;
+  int c;
+  
+  function new();
+    s1=new();
+  endfunction
+  
+  function third copy();
+    copy=new();
+    copy.c=c;
+    copy.s1=s1.copy();
+  endfunction
+endclass
+
+module tb;
+  
+  third t1,t2;
+  
+  initial begin
+    
+    t1=new();
+    t2=new();
+    
+    t1.c=50;
+    
+    t2=t1.copy();
+    
+    $display("t1-> c=%0d, t2->c=%0d",t1.c,t2.c);//50,50
+    
+    t1.s1.f1.a=15;
+    t1.s1.b=25;
+    $display("t1-> a=%0d, t2->a=%0d",t1.s1.f1.a,t2.s1.f1.a);//15,0
+    $display("t1-> b=%0d, t2->b=%0d",t1.s1.b,t2.s1.b);//25,0
+    
+    t2.s1.f1.a=30;
+    t2.s1.b=40;
+    $display("t1-> a=%0d, t2->a=%0d",t1.s1.f1.a,t2.s1.f1.a);//15,30
+    $display("t1-> b=%0d, t2->b=%0d",t1.s1.b,t2.s1.b);//25,40
+    
+  end
+    
+  
+  
+endmodule
+    

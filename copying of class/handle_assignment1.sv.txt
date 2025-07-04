@@ -1,0 +1,28 @@
+class first;
+  int a;
+  
+endclass
+
+module tb;
+  
+  first f1,f2;
+  
+  initial begin
+    
+    f1=new();
+    
+    f1.a=10;
+    
+    $display("[f1]: a=%0d",f1.a);
+    
+    f2=f1;
+    
+    $display("[f2]: a=%0d",f2.a);
+    
+    f2.a=50;
+    $display("[f1]: a=%0d",f1.a);
+    $display("[f2]: a=%0d",f2.a);
+    
+  end
+  
+endmodule
